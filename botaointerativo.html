@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Interativo</title>
+    <style>
+        body{
+            margin: 100px 250px;
+        }
+
+        button{
+            padding: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="botao-estilo">Mudar de cor</button>
+
+    <script>
+        let meuBotao = document.querySelector('#botao-estilo')
+        meuBotao.addEventListener('click', function(){
+            if(meuBotao.style.color === 'red') {
+                meuBotao.style.color = 'blue'
+            
+            } else {
+                
+                meuBotao.style.color = 'red'
+            }
+        })
+    </script>
+</body>
+</html>

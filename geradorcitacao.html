@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de citações</title>
+    <style>
+        body{
+            margin: 120px;
+            padding: 0;
+            background-color: rgb(158, 202, 199);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .minhas-citacoes{
+            width: 45%;
+            height: 100px;
+            padding: 20px;
+            background-color: rgb(212, 214, 216);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items:flex-start;
+        }
+        .gerar-citacao{
+            margin: 20px;
+            padding: 10px;
+            border: none;
+            background-color: rgb(160, 155, 149);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <h1>Gerador de citações</h1>
+    <div class="minhas-citacoes">
+        <blockquote class="texto-citacao">Aguardando cidação...</blockquote>
+        <p class="autor-texto">Aguardando Autor...</p>
+    </div>
+    <button class="gerar-citacao">Gerar Citação</button>
+
+
+    <script>
+        let textoCitacao = document.querySelector('.texto-citacao')
+        let autorCitacao = document.querySelector('.autor-texto')
+        let gerarcitacao = document.querySelector('.gerar-citacao')
+
+        const citacoes = [
+            {texto: "A humildade só pode sobreviver na presença de Deus.", autor: "John Piper"},
+            {texto:"Assim como dependemos de Deus para o básico do nosso sustento físico, também dele dependemos para o sustento espiritual.", autor: "Rodrigo Bibo "},
+            {texto:"Você nunca saberá que Deus é tudo o que você precisa até que ele seja tudo o que você tiver.", autor: "Rick Warren"}
+        ]
+
+        gerarcitacao.addEventListener('click', function(){
+            let citacaoSorteada = Math.floor(Math.random() * citacoes.length)
+            let exibirCitacoes = citacoes[citacaoSorteada]
+            textoCitacao.innerHTML = `${exibirCitacoes.texto}`
+            autorCitacao.innerHTML = `${exibirCitacoes.autor}`
+          
+        })
+    </script>
+</html>
